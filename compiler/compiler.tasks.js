@@ -29,7 +29,7 @@ const optionDefinitions = [
             {
               title: 'Clean output',
               task: () =>
-                execa('yarn clean').catch(() => {
+                execa('npm run clean').catch(() => {
                   throw new Error('Cannot remove output directory');
                 })
             },
@@ -42,14 +42,14 @@ const optionDefinitions = [
                     {
                       title: 'Lint Scripts',
                       task: () =>
-                        execa('yarn lint:scripts').catch(() => {
+                        execa('npm run lint:scripts').catch(() => {
                           throw new Error('Error Linting Scripts');
                         })
                     },
                     {
                       title: 'Lint Styles',
                       task: () =>
-                        execa('yarn lint:styles').catch(() => {
+                        execa('npm run lint:styles').catch(() => {
                           throw new Error('Error Linting Styles');
                         })
                     }
@@ -66,7 +66,7 @@ const optionDefinitions = [
     {
       title: 'Compile Themes',
       task: () =>
-        execa('yarn themes').catch(() => {
+        execa('npm run themes').catch(() => {
           throw new Error('Cannot compile themes');
         })
     },
@@ -93,7 +93,7 @@ const optionDefinitions = [
       title: `Bundle Packages: ${cliConfig.platforms?.join(', ') || ''}`,
       task: () =>
         execa(
-          `yarn lerna --verbose --scope=@papanasi/${
+          `npm run lerna --verbose --scope=@papanasi/${
             cliConfig.platforms.length > 1 ? `{${cliConfig.platforms?.join(',')}}` : cliConfig.platforms
           } build`
         ).catch((error) => {

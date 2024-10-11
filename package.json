@@ -16,7 +16,7 @@
     "lint:styles": "stylelint \"./src/styles/**/*.(css)\" --fix",
     "postinstall": "node ./hooks/post-install.hook.js",
     "build-storybook": "cross-env NODE_OPTIONS=--openssl-legacy-provider build-storybook || true",
-    "build": "yarn compile",
+    "build": "npm run compile",
     "package": "lerna version 1.1.2 --force-publish",
     "postpackage": "node ./hooks/post-package.hook.js",
     "release": "lerna publish from-package --force-publish"
@@ -47,6 +47,7 @@
     "@rollup/plugin-dynamic-import-vars": "^2.0.3",
     "@rollup/plugin-json": "^6.0.0",
     "@rollup/plugin-node-resolve": "^15.0.2",
+    "@rollup/plugin-typescript": "^12.1.0",
     "@storybook/addon-actions": "^6.5.16",
     "@storybook/addon-essentials": "^6.5.16",
     "@storybook/addon-interactions": "^6.5.16",
@@ -120,7 +121,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn lint"
+      "pre-commit": "npm run lint"
     }
   },
   "resolutions": {

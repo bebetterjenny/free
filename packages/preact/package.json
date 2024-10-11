@@ -37,7 +37,7 @@
     "dist"
   ],
   "scripts": {
-    "prebuild": "yarn install",
+    "prebuild": "npm install --legacy-peer-deps",
     "build": "rollup -c",
     "postbuild": "copyfiles ../../.themes/** ./dist/themes --flat && rimraf ./dist/papanasi-preact.es.d.ts&& rimraf ./dist/papanasi-preact.umd.d.ts"
   },
