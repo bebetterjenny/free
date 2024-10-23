@@ -2,6 +2,8 @@ import postcss from 'rollup-plugin-postcss';
 
 import commandLineArgs from 'command-line-args';
 
+import postcssConfig from './postcss.config.cjs';
+
 const optionDefinitions = [
   { name: 'config', alias: 'c', type: String },
   { name: 'theme', alias: 't', type: String }
@@ -9,7 +11,7 @@ const optionDefinitions = [
 
 export default () => {
   const cliConfig = commandLineArgs(optionDefinitions);
-  const postcssConfig = require(path.resolve(__dirname, './postcss.config.cjs'));
+  // const postcssConfig = require(path.resolve(__dirname, './postcss.config.cjs'));
 
   return [
     {

@@ -4,6 +4,7 @@ packages/**/lib/
 packages/**/src/
 packages/**/types/
 packages/**/tsconfig.*
+packages/**/package.json
 *.log
 storybook-static/
 packages/webcomponents/custom-elements.json

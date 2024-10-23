@@ -44,7 +44,7 @@
     "types"
   ],
   "scripts": {
-    "prebuild": "npm install --legacy-peer-deps",
+    "prebuild": "yarn install",
     "build": "qwik build",
     "build.lib": "vite build --mode lib",
     "build.types": "tsc --emitDeclarationOnly",

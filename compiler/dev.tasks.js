@@ -10,14 +10,14 @@ import path from 'path';
     {
       title: 'Clean output',
       task: () =>
-        execa('npm run clean').catch(() => {
+        execa('yarn clean').catch(() => {
           throw new Error('Cannot remove output directory');
         })
     },
     {
       title: 'Compile Themes',
       task: () =>
-        execa('npm run themes').catch((error) => {
+        execa('yarn themes').catch((error) => {
           throw new Error('Error compiling Themes' + error);
         })
     },
@@ -31,7 +31,7 @@ import path from 'path';
     {
       title: 'Bundle React',
       task: () =>
-        execa('npm run lerna --verbose --scope=@papanasi/react build').catch((error) => {
+        execa('yarn lerna --verbose --scope=@papanasi/react build').catch((error) => {
           throw new Error('Error bundling React ' + error);
         })
     },
@@ -51,7 +51,7 @@ import path from 'path';
 
           try {
             await execa('node ./compiler/platforms/react --dev');
-            await execa('npm run lerna --verbose --scope=@papanasi/react build');
+            await execa('yarn lerna --verbose --scope=@papanasi/react build');
           } catch (e) {
             spinner.text = `Error compiling ${e.message}.`;
             spinner.fail();
