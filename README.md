@@ -392,6 +392,13 @@ Finally, to launch storybook use:
 > yarn start
 ```
 
+Initial use:
+
+```
+> yarn
+> yarn compile
+```
+
 ### Our Sponsors
 
 <table>
