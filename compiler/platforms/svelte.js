@@ -34,6 +34,16 @@ const DEFAULT_OPTIONS = {
 
         fs.writeFileSync(src, data, 'utf8');
       });
+      glob.sync(`${outPath}/src/inputs/**/index.ts`).map((src) => {
+        const data = fs
+          .readFileSync(src, 'utf8')
+          // add svelte to index
+          .replace(/(export { default } from)(.*)(';)/g, '$1$2.svelte$3')
+          // but remove from hooks
+          .replace(/\.hook\.svelte/g, '.hook');
+
+        fs.writeFileSync(src, data, 'utf8');
+      });
     }
 
     const data = fs.readFileSync(outFile, 'utf8');

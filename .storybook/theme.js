@@ -3,7 +3,7 @@ import { create } from '@storybook/theming';
 export const Themes = {
   manager: create({
     base: 'light',
-    brandTitle: 'Papanasi - Universal UI Library',
+    brandTitle: 'FreeForm - Configurable Form Library',
     brandUrl: 'https://github.com/ckgrafico/papanasi',
     brandImage: 'https://raw.githubusercontent.com/CKGrafico/papanasi/main/docs/resources/logo-github.svg',
     colorSecondary: '#ad99ff',

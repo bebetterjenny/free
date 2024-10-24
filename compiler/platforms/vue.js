@@ -118,6 +118,16 @@ const DEFAULT_OPTIONS = {
 
         fs.writeFileSync(src, data, 'utf8');
       });
+      glob.sync(`${outPath}/src/inputs/**/index.ts`).map((src) => {
+        const data = fs
+          .readFileSync(src, 'utf8')
+          // add vue to index
+          .replace(/(export { default } from)(.*)(';)/g, '$1$2.vue$3')
+          // but remove from hooks
+          .replace(/\.hook\.vue/g, '.hook');
+
+        fs.writeFileSync(src, data, 'utf8');
+      });
     }
 
     const data = fs.readFileSync(outFile, 'utf8');

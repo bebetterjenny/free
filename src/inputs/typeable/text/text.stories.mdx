@@ -1,0 +1,143 @@
+import { Canvas, Meta, Story, ArgsTable } from '@storybook/addon-docs';
+import { Button, Text } from '../../../../packages/react/src';
+import { variants, Intent, intents } from '../../../models';
+import { Customization, Codesandbox } from '../../../../.storybook/components';
+
+<Meta
+  title="📝Inputs/Typeable"
+  component={Text}
+  argTypes={{
+    disabled: {
+      name: 'disabled',
+      description: 'Disable actions in the button',
+      table: {},
+      control: {
+        type: 'boolean'
+      }
+    },
+  }}
+/>
+
+export const Template = (args) => (
+  <div>
+    {variants.map((variant) => (
+      <div>
+        <Text key={variant.key} {...args} variant={variant.value} />
+      </div>
+    ))}
+  </div>
+);
+
+# Text
+
+Text allows user to take enter text in the form field.
+There are 3 different variants `outlined`, `filled` and `borderless` or the one you decide to create.
+
+You can customize variants changing the variables, more info in the [variables page](/docs/start--page)
+
+## Showcase
+
+<Canvas>
+  <Story
+    name="Text"
+    args={{
+      disabled: false
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Customization
+
+<Customization
+  selector=".f-text"
+  css={`
+    --pa-color-basic-brightest: #ffffff;
+    --pa-color-basic-darkest: #101116;
+    --pa-color-primary-normal: #017aff;
+    --pa-color-secondary-normal: #6c47ff;
+    --pa-color-tertiary-normal: #f34971;
+    --f-text-radius: var(--pa-border-radius-small);
+    --f-text-border-width: var(--pa-border-width-small);
+    --f-text-font-weight: var(--pa-font-weight-medium);
+    --f-text-outline: var(--pa-outline-width);
+  `}
+/>
+
+### Properties
+
+<ArgsTable story="Text" of={Text} />
+
+## How to use this component
+
+### Angular
+
+<Codesandbox
+  components={['Text']}
+  platform="angular"
+  code={`
+    <span f-text variant="primary" />`}
+/>
+
+### Preact
+
+<Codesandbox
+  components={['Text']}
+  platform="preact"
+  code={`
+  <Text variant="primary" />`}
+/>
+
+### Qwik
+
+<Codesandbox
+  components={['Text']}
+  platform="qwik"
+  code={`
+  <Text variant="primary" />`}
+/>
+
+### React
+
+<Codesandbox
+  components={['Text']}
+  platform="react"
+  code={`
+  <Text variant="primary" />`}
+/>
+
+### Solid
+
+<Codesandbox
+  components={['Text']}
+  platform="solid"
+  code={`
+  <Text variant="primary" />`}
+/>
+
+### Svelte
+
+<Codesandbox
+  components={['Text']}
+  platform="svelte"
+  code={`
+  <Text variant="primary" />`}
+/>
+
+### Vue
+
+<Codesandbox
+  components={['Text']}
+  platform="vue"
+  code={`
+  <Text variant="primary" />`}
+/>
+
+### Web Components
+
+<Codesandbox
+  components={['Text']}
+  platform="webcomponents"
+  code={`<f-text variant="primary" />`}
+/>

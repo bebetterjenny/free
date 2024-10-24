@@ -17,7 +17,10 @@ export const parameters = {
         '📗Documentation',
         ['Introduction', 'Elements', 'Customization'],
         '🧩Elements',
-        ['Layout', ['Container', 'Row', 'Column', 'Grid'], 'Components']
+        ['Layout', ['Container', 'Row', 'Column', 'Grid'], 'Components'],
+        '📝Inputs',
+        ['Typeable', ['Text']],
+        '🖱️Buttons'
       ]
     }
   },

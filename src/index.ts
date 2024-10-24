@@ -10,6 +10,7 @@ export { default as Pill } from './elements/components/pill';
 export { default as Spinner } from './elements/components/spinner';
 export { default as Itchio } from './elements/enterprise/itchio';
 export { default as useTooltipExtension } from './elements/extensions/tooltip';
+export { default as Text } from './inputs/typeable/text';
 // TODO this breaks command --element
 export { default as Toast, useToastExtension } from './elements/extensions/toast';
 export { default as Column } from './elements/layout/column';
